@@ -1,0 +1,54 @@
+// HU LOGISTICS BACKEND (Node.js + Express + MongoDB)
+
+// --- package.json --- { "name": "hu-logistics-backend", "version": "1.0.0", "main": "server.js", "type": "module", "scripts": { "start": "node server.js", "dev": "nodemon server.js" }, "dependencies": { "cors": "^2.8.5", "dotenv": "^16.0.3", "express": "^4.18.2", "mongoose": "^7.2.2" }, "devDependencies": { "nodemon": "^2.0.22" } }
+
+// --- .env --- MONGO_URI=mongodb://localhost:27017/hu-logistics PORT=5000
+
+// --- config/db.js --- import mongoose from 'mongoose';
+
+const connectDB = async () => { try { const conn = await mongoose.connect(process.env.MONGO_URI); console.log(MongoDB Connected: ${conn.connection.host}); } catch (error) { console.error(Error: ${error.message}); process.exit(1); } };
+
+export default connectDB;
+
+// --- models/User.js --- import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema({ name: { type: String, required: true }, email: { type: String, required: true, unique: true }, role: { type: String, enum: ['customer', 'driver', 'admin'], default: 'customer' }, createdAt: { type: Date, default: Date.now } });
+
+const User = mongoose.model('User', userSchema); export default User;
+
+// --- models/Order.js --- import mongoose from 'mongoose';
+
+const orderSchema = new mongoose.Schema({ sender: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, receiverName: String, pickupAddress: String, deliveryAddress: String, status: { type: String, default: 'Pending' }, assignedDriver: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, createdAt: { type: Date, default: Date.now } });
+
+const Order = mongoose.model('Order', orderSchema); export default Order;
+
+// --- controllers/userController.js --- import User from '../models/User.js';
+
+export const createUser = async (req, res) => { try { const user = await User.create(req.body); res.status(201).json(user); } catch (err) { res.status(400).json({ message: err.message }); } };
+
+export const getUsers = async (req, res) => { const users = await User.find(); res.json(users); };
+
+// --- controllers/orderController.js --- import Order from '../models/Order.js';
+
+export const createOrder = async (req, res) => { try { const order = await Order.create(req.body); res.status(201).json(order); } catch (err) { res.status(400).json({ message: err.message }); } };
+
+export const getOrders = async (req, res) => { const orders = await Order.find().populate('sender assignedDriver'); res.json(orders); };
+
+// --- routes/userRoutes.js --- import express from 'express'; import { createUser, getUsers } from '../controllers/userController.js';
+
+const router = express.Router(); router.post('/', createUser); router.get('/', getUsers); export default router;
+
+// --- routes/orderRoutes.js --- import express from 'express'; import { createOrder, getOrders } from '../controllers/orderController.js';
+
+const router = express.Router(); router.post('/', createOrder); router.get('/', getOrders); export default router;
+
+// --- server.js --- import express from 'express'; import dotenv from 'dotenv'; import cors from 'cors'; import connectDB from './config/db.js'; import userRoutes from './routes/userRoutes.js'; import orderRoutes from './routes/orderRoutes.js';
+
+dotenv.config(); connectDB();
+
+const app = express(); app.use(cors()); app.use(express.json());
+
+app.get('/', (req, res) => res.send('HU Logistics API Running')); app.use('/api/users', userRoutes); app.use('/api/orders', orderRoutes);
+
+const PORT = process.env.PORT || 5000; app.listen(PORT, () => console.log(Server running on port ${PORT}));
+
