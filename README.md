@@ -1,5 +1,5 @@
 
-HU LOGISTICS (Pty) Ltd
+#HU LOGISTICS (Pty) Ltd
 
 Modern logistics, made reliable.
 
@@ -8,28 +8,28 @@ HU LOGISTICS is a South African-based tech-powered logistics company aiming to t
 
 ---
 
-Vision
+##Vision
 
 To become South Africa’s leading logistics platform by combining smart technology with dependable service to connect people, businesses, and supply chains.
 
-Mission
+##Mission
 
 To provide fast, reliable, and scalable logistics solutions tailored to the unique needs of local businesses and individuals — backed by modern tools and meaningful customer service.
 
 
 ---
 
-Features
+##Features
 
-Package pickup and delivery scheduling
+-Package pickup and delivery scheduling
 
-Real-time tracking and delivery updates
+-Real-time tracking and delivery updates
 
-Admin dashboard for dispatch and reporting
+-Admin dashboard for dispatch and reporting
 
-Customer portal to view orders and request deliveries
+-Customer portal to view orders and request deliveries
 
-Fleet and driver management (planned)
+-Fleet and driver management (planned)
 
 
 
@@ -40,8 +40,8 @@ Tech Stack
 
 ---
 
-Repository Structure
-
+##Repository Structure
+'' '
 hu-logistics/
 ├── backend/            # Express.js backend
 ├── frontend/           # React frontend
@@ -51,70 +51,70 @@ hu-logistics/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+'' '
 
 ---
 
-Getting Started
+##Getting Started
 
-Prerequisites
+##Prerequisites
 
-Node.js (v18 or higher)
+-Node.js (v18 or higher)
 
-npm or yarn
+-npm or yarn
 
 
-Setup Instructions
+###Setup Instructions
 
-1. Clone the repo
-
-git clone https://github.com/YOUR-USERNAME/hu-logistics.git
+1.**Clone the repo**
+ '' 'bash
+git clone https://github.com/DataResolve001 /hu-logistics.git
 cd hu-logistics
+' '' 
 
-
-2. Install frontend
-
+2. **Install frontend**
+ '' 'bash
 cd frontend
 npm install
 npm run dev
+' '' 
 
-
-3. Install backend
-
+3. **Install backend**
+'' 'bash
 cd ../backend
 npm install
 node server.js
+' '' 
+
+4. **Visit Frontend**
+
+-Open: http://localhost:5173 (or your dev port)
 
 
-4. Visit Frontend
-
-Open: http://localhost:5173 (or your dev port)
-
-
-
-
-
----
-
-Roadmap
-
-[x] Company Registered with CIPC
-
-[x] Initial GitHub Setup
-
-[x] React + Express Scaffolding
-
-[ ] Figma UI Designs
-
-[ ] Order + Driver APIs
-
-[ ] Launch Pilot in Gauteng
 
 
 
 ---
 
-License
+##Roadmap
+
+-[x] Company Registered with CIPC
+
+-[x] Initial GitHub Setup
+
+-[x] React + Express Scaffolding
+
+-[ ] Figma UI Designs
+
+-[ ] Order + Driver APIs
+
+-[ ] Launch Pilot in Gauteng
+
+
+
+---
+
+#License
 
 This project is licensed under the MIT License.
 
