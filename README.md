@@ -1,128 +1,75 @@
 
-#HU LOGISTICS (Pty) Ltd
+# HU LOGISTICS (Pty) Ltd
 
-Modern logistics, made reliable.
+**Smart Logistics for a Connected Africa**
 
-HU LOGISTICS is a South African-based tech-powered logistics company aiming to transform local delivery and freight services through efficiency, transparency, and innovation.
-
-
----
-
-##Vision
-
-To become South Africa’s leading logistics platform by combining smart technology with dependable service to connect people, businesses, and supply chains.
-
-##Mission
-
-To provide fast, reliable, and scalable logistics solutions tailored to the unique needs of local businesses and individuals — backed by modern tools and meaningful customer service.
-
+HU LOGISTICS is a technology-driven logistics company based in South Africa. We are dedicated to transforming the way goods move — from urban deliveries to business freight — by making logistics faster, smarter, and more reliable.
 
 ---
 
-##Features
+## Table of Contents
 
--Package pickup and delivery scheduling
-
--Real-time tracking and delivery updates
-
--Admin dashboard for dispatch and reporting
-
--Customer portal to view orders and request deliveries
-
--Fleet and driver management (planned)
-
-
-
----
-
-Tech Stack
-
+- [Vision](#vision)
+- [Mission](#mission)
+- [Core Values](#core-values)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Contact](#contact)
 
 ---
 
-##Repository Structure
-'' '
-hu-logistics/
-├── backend/            # Express.js backend
-├── frontend/           # React frontend
-├── docs/               # Business roadmap, proposals
-├── designs/            # Logo, Figma links
-├── .env.example
-├── .gitignore
-├── LICENSE
-└── README.md
-'' '
+## Vision
+
+To become the most trusted logistics partner in South Africa by enabling smarter deliveries through innovation, data, and people-first solutions.
+
+## Mission
+
+We aim to provide cutting-edge logistics services that connect individuals, small businesses, and large enterprises with seamless delivery and tracking experiences.
 
 ---
 
-##Getting Started
+## Core Values
 
-##Prerequisites
+- **Reliability** – We deliver on time, every time.
+- **Innovation** – We embrace technology to improve logistics.
+- **Customer Focus** – Your packages, our priority.
+- **Sustainability** – Smarter routes, greener choices.
 
--Node.js (v18 or higher)
+---
 
--npm or yarn
+## Features
 
+- Real-time order tracking
+- Customer dashboard for placing & managing deliveries
+- Admin dispatch panel
+- Driver interface with route guidance
+- API-ready architecture for eCommerce integration
+- Scalable backend built for future expansion
 
-###Setup Instructions
+---
 
-1.**Clone the repo**
- '' 'bash
+## Tech Stack
+
+| Layer        | Technology              |
+|--------------|--------------------------|
+| Frontend     | React + Tailwind CSS     |
+| Backend      | Node.js + Express        |
+| Database     | MongoDB (upcoming)       |
+| UI Design    | Figma (In Progress)      |
+| Deployment   | Render / Vercel (Planned)|
+
+---
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
 git clone https://github.com/DataResolve001 /hu-logistics.git
 cd hu-logistics
-' '' 
-
-2. **Install frontend**
- '' 'bash
-cd frontend
-npm install
-npm run dev
-' '' 
-
-3. **Install backend**
-'' 'bash
-cd ../backend
-npm install
-node server.js
-' '' 
-
-4. **Visit Frontend**
-
--Open: http://localhost:5173 (or your dev port)
-
-
-
-
-
----
-
-##Roadmap
-
--[x] Company Registered with CIPC
-
--[x] Initial GitHub Setup
-
--[x] React + Express Scaffolding
-
--[ ] Figma UI Designs
-
--[ ] Order + Driver APIs
-
--[ ] Launch Pilot in Gauteng
-
-
-
----
-
-#License
-
-This project is licensed under the MIT License.
-
-
----
-
-> Powered by HU LOGISTICS (Pty) Ltd | Reg. No. 2025/198314/07
-Created by Bonginhlanhla Microsen Motha
-
 
 
